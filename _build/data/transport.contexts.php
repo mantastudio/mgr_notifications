@@ -1,11 +1,11 @@
 <?php
 /**
- * contexts transport file for mgr_notifications extra
+ * contexts transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
  *
- * @package mgr_notifications
+ * @package mgrnotifications
  * @subpackage build
  */
 
@@ -27,8 +27,8 @@ $contexts = array();
 
 $contexts[1] = $modx->newObject('modContext');
 $contexts[1]->fromArray(array (
-  'key' => 'mgr_notifications',
-  'description' => 'mgr_notifications context',
+  'key' => 'mgrnotifications',
+  'description' => 'mgrnotifications context',
   'rank' => 2,
 ), '', true, true);
 return $contexts;

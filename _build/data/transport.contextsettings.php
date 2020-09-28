@@ -1,11 +1,11 @@
 <?php
 /**
- * contextSettings transport file for mgr_notifications extra
+ * contextSettings transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
  *
- * @package mgr_notifications
+ * @package mgrnotifications
  * @subpackage build
  */
 
@@ -27,26 +27,26 @@ $contextSettings = array();
 
 $contextSettings[1] = $modx->newObject('modContextSetting');
 $contextSettings[1]->fromArray(array (
-  'context_key' => 'mgr_notifications',
-  'key' => 'mgr_notifications_context_setting1',
-  'name' => 'mgr_notifications Setting One',
+  'context_key' => 'mgrnotifications',
+  'key' => 'mgrnotifications_context_setting1',
+  'name' => 'mgrnotifications Setting One',
   'description' => 'Description for setting one',
-  'namespace' => 'mgr_notifications',
+  'namespace' => 'mgrnotifications',
   'xtype' => 'textfield',
   'value' => 'value1',
-  'area' => 'mgr_notifications',
-  'fk' => 'mgr_notifications',
+  'area' => 'mgrnotifications',
+  'fk' => 'mgrnotifications',
 ), '', true, true);
 $contextSettings[2] = $modx->newObject('modContextSetting');
 $contextSettings[2]->fromArray(array (
-  'context_key' => 'mgr_notifications',
-  'key' => 'mgr_notifications_context_setting2',
-  'name' => 'mgr_notifications Setting Two',
+  'context_key' => 'mgrnotifications',
+  'key' => 'mgrnotifications_context_setting2',
+  'name' => 'mgrnotifications Setting Two',
   'description' => 'Description for setting two',
-  'namespace' => 'mgr_notifications',
+  'namespace' => 'mgrnotifications',
   'xtype' => 'combo-boolean',
   'value' => true,
-  'area' => 'mgr_notifications',
-  'fk' => 'mgr_notifications',
+  'area' => 'mgrnotifications',
+  'fk' => 'mgrnotifications',
 ), '', true, true);
 return $contextSettings;

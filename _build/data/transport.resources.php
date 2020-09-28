@@ -1,11 +1,11 @@
 <?php
 /**
- * resources transport file for mgr_notifications extra
+ * resources transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
  *
- * @package mgr_notifications
+ * @package mgrnotifications
  * @subpackage build
  */
 
@@ -30,7 +30,7 @@ $resources[1]->fromArray(array (
   'id' => 1,
   'pagetitle' => 'Resource1',
   'alias' => 'resource1',
-  'context_key' => 'mgr_notifications',
+  'context_key' => 'mgrnotifications',
   'class_key' => 'modDocument',
   'published' => '',
   'richtext' => '1',
@@ -45,7 +45,7 @@ $resources[2]->fromArray(array (
   'id' => 2,
   'pagetitle' => 'Resource2',
   'alias' => 'resource2',
-  'context_key' => 'mgr_notifications',
+  'context_key' => 'mgrnotifications',
   'template' => 'Template2',
   'richtext' => false,
   'published' => true,

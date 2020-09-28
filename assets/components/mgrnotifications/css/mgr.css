@@ -1,0 +1,18 @@
+.mgrnotifications-resource-body {
+padding: 10px 0 10px 20px;
+}
+
+
+.mgrnotifications-grid .mgrnotifications-unpublished,
+.mgrnotifications-grid .mgrnotifications-unpublished span,
+.mgrnotifications-grid .mgrnotifications-unpublished a {
+color: gray;
+}
+.x-grid3-body .x-grid3-td-checker {
+background-image: none !important;
+}
+
+.mgrnotifications-deleted, .mgrnotifications-deleted span, .mgrnotifications-deleted a,
+.mgrnotifications-grid .mgrnotifications-deleted, .mgrnotifications-grid .mgrnotifications-deleted span, .mgrnotifications-grid .mgrnotifications-deleted a {
+color: red !important;
+}

@@ -1,11 +1,11 @@
 <?php
 /**
- * menus transport file for mgr_notifications extra
+ * menus transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
  *
- * @package mgr_notifications
+ * @package mgrnotifications
  * @subpackage build
  */
 
@@ -25,16 +25,16 @@ if (! function_exists('stripPhpTags')) {
 $action = $modx->newObject('modAction');
 $action->fromArray( array (
   'id' => 1,
-  'namespace' => 'mgr_notifications',
+  'namespace' => 'mgrnotifications',
   'controller' => 'index',
   'haslayout' => true,
-  'lang_topics' => 'mgr_notifications:default',
+  'lang_topics' => 'mgrnotifications:default',
   'assets' => '',
 ), '', true, true);
 
 $menus[1] = $modx->newObject('modMenu');
 $menus[1]->fromArray( array (
-  'text' => 'mgr_notifications',
+  'text' => 'mgrnotifications',
   'parent' => 'components',
   'description' => 'ex_menu_desc',
   'icon' => '',
@@ -42,7 +42,7 @@ $menus[1]->fromArray( array (
   'params' => '',
   'handler' => '',
   'permissions' => '',
-  'namespace' => 'mgr_notifications',
+  'namespace' => 'mgrnotifications',
   'id' => 1,
 ), '', true, true);
 $menus[1]->addOne($action);

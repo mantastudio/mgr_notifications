@@ -1,11 +1,11 @@
 <?php
 /**
- * snippets transport file for mgr_notifications extra
+ * snippets transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
  *
- * @package mgr_notifications
+ * @package mgrnotifications
  * @subpackage build
  */
 
