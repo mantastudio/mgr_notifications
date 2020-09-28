@@ -1,0 +1,18 @@
+.mgr_notifications-resource-body {
+padding: 10px 0 10px 20px;
+}
+
+
+.mgr_notifications-grid .mgr_notifications-unpublished,
+.mgr_notifications-grid .mgr_notifications-unpublished span,
+.mgr_notifications-grid .mgr_notifications-unpublished a {
+color: gray;
+}
+.x-grid3-body .x-grid3-td-checker {
+background-image: none !important;
+}
+
+.mgr_notifications-deleted, .mgr_notifications-deleted span, .mgr_notifications-deleted a,
+.mgr_notifications-grid .mgr_notifications-deleted, .mgr_notifications-grid .mgr_notifications-deleted span, .mgr_notifications-grid .mgr_notifications-deleted a {
+color: red !important;
+}

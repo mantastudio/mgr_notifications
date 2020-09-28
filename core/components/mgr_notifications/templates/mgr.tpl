@@ -1,0 +1,1 @@
+<div id="mgr_notifications-panel-home-div"></div>
