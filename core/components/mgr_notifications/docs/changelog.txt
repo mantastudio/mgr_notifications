@@ -1,5 +1,0 @@
-Changelog for mgr_notifications
-
-mgr_notifications 1.0.0
----------------------------------
-Initial Version

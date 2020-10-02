@@ -1,1 +1,0 @@
-var mgr_notifications=function(config){config=config||{};mgr_notifications.superclass.constructor.call(this,config)};Ext.extend(mgr_notifications,Ext.Component,{page:{},window:{},grid:{},tree:{},panel:{},combo:{},config:{}});Ext.reg('mgr_notifications',mgr_notifications);var mgr_notifications=new mgr_notifications()
