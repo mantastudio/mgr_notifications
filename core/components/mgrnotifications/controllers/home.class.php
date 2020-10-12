@@ -30,7 +30,7 @@ class mgrnotificationsHomeManagerController extends mgrnotificationsManagerContr
      * @return null|string
      */
     public function getPageTitle() {
-        return $this->modx->lexicon('mgrnotifications');
+        return $this->modx->lexicon('ntm.mgrnotifications');
     }
 
     /**
@@ -39,10 +39,11 @@ class mgrnotificationsHomeManagerController extends mgrnotificationsManagerContr
 
 
     public function loadCustomCssJs() {
-        $this->addJavascript($this->mgrnotifications->config['jsUrl'] . 'widgets/chunk.grid.js');
-        $this->addJavascript($this->mgrnotifications->config['jsUrl'] . 'widgets/snippet.grid.js');
+        $this->addJavascript($this->mgrnotifications->config['jsUrl'] . 'widgets/customer.grid.js');
+        $this->addJavascript($this->mgrnotifications->config['jsUrl'] . 'widgets/notification.grid.js');
         $this->addJavascript($this->mgrnotifications->config['jsUrl'] . 'widgets/home.panel.js');
         $this->addLastJavascript($this->mgrnotifications->config['jsUrl'] . 'sections/home.js');
+        $this->addLastJavascript($this->mgrnotifications->config['jsUrl'] . 'combos.js');
 
         $this->addCss($this->mgrnotifications->config['cssUrl'] . 'mgr.css');
 

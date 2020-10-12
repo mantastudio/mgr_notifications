@@ -25,27 +25,14 @@
 /* @var $modx modX */
 
 
-class mgrnotificationsSnippetRemoveProcessor extends modObjectRemoveProcessor {
-    public $classKey = 'modSnippet';
+class mgrnotificationsCustomerRemoveProcessor extends modObjectRemoveProcessor {
+    public $classKey = 'customers';
     public $languageTopics = array('mgrnotifications:default');
-    public $defaultSortField = 'name';
+    public $defaultSortField = 'id';
     public $defaultSortDirection = 'ASC';
-    public $ids;
+    public $objectType = 'mgrnotifications.customer';
 
-    function initialize() {
-        /* Initialization here */
-        return true;
-    }
 
-    /* For built-in processors (create, update, duplicate, remove),
-       this method can be removed */
-    public function process() {
-
-        /* perform action here */
-
-        return $this->success();
-
-    }
 }
 
-return 'mgrnotificationsSnippetRemoveProcessor';
+return 'mgrnotificationsCustomerRemoveProcessor';

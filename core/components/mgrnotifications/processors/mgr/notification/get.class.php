@@ -25,27 +25,12 @@
 /* @var $modx modX */
 
 
-class mgrnotificationsChunkRemoveProcessor extends modObjectRemoveProcessor {
-    public $classKey = 'modChunk';
+class mgrnotificationsNotificationGetProcessor extends modObjectGetProcessor {
+    public $classKey = 'notifications';
     public $languageTopics = array('mgrnotifications:default');
-    public $defaultSortField = 'name';
-    public $defaultSortDirection = 'ASC';
-    public $ids;
+    public $defaultSortField = 'id';
+    public $defaultSortDirection = 'DESC';
 
-    function initialize() {
-        /* Initialization here */
-        return true;
-    }
 
-    /* For built-in processors (create, update, duplicate, remove),
-       this method can be removed */
-    public function process() {
-
-        /* perform action here */
-
-        return $this->success();
-
-    }
 }
-
-return 'mgrnotificationsChunkRemoveProcessor';
+return 'mgrnotificationsNotificationGetProcessor';

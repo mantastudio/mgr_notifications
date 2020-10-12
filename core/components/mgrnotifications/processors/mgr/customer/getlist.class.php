@@ -1,6 +1,6 @@
 <?php
 /**
- * Snippet1 snippet for mgrnotifications extra
+ * Processor file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
@@ -19,17 +19,33 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  *
  * @package mgrnotifications
+ * @subpackage processors
  */
 
-/**
- * Description
- * -----------
- * Description for Snippet one
- *
- * Variables
- * ---------
- * @var $modx modX
- * @var $scriptProperties array
- *
- * @package mgrnotifications
- **/
+/* @var $modx modX */
+
+
+class mgrnotificationsCustomerGetlistProcessor extends modObjectGetListProcessor {
+    public $classKey = 'customers';
+    public $languageTopics = array('mgrnotifications:default');
+    public $defaultSortField = 'id';
+    public $defaultSortDirection = 'DESC';
+
+    /**
+     * Can be used to adjust the query prior to the COUNT statement
+     *
+     * @param xPDOQuery $c
+     * @return xPDOQuery
+     */
+    public function prepareQueryBeforeCount(xPDOQuery $c) {
+        $query = $this->getProperty('query');
+        if(!empty($query)) {
+            $c->andCondition(array(
+                'domain:LIKE' => '%'.$query.'%'
+            ));
+        }
+        return $c;
+    }
+
+}
+return 'mgrnotificationsCustomerGetlistProcessor';

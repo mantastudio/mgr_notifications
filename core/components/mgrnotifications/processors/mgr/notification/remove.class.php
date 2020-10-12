@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin1 plugin for mgrnotifications extra
+ * Processor file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
@@ -19,18 +19,18 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  *
  * @package mgrnotifications
+ * @subpackage processors
  */
 
-/**
- * Description
- * -----------
- * [[+description]]
- *
- * Variables
- * ---------
- * @var $modx modX
- * @var $scriptProperties array
- *
- * @package mgrnotifications
- **/
+/* @var $modx modX */
 
+
+class mgrnotificationsNotificationRemoveProcessor extends modObjectRemoveProcessor {
+    public $classKey = 'notifications';
+    public $languageTopics = array('mgrnotifications:default');
+    public $defaultSortField = 'id';
+    public $defaultSortDirection = 'ASC';
+
+}
+
+return 'mgrnotificationsNotificationRemoveProcessor';

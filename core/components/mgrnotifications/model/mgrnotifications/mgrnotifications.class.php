@@ -46,7 +46,10 @@
             'connector_url' => $assetsUrl.'connector.php',
             'cssUrl' => $assetsUrl.'css/',
             'jsUrl' => $assetsUrl.'js/',
+            'default_message_en' => $this->modx->config['default_message_en'],
+            'default_message_nl' => $this->modx->config['default_message_nl'],
         ),$config);
+
 
         $this->modx->addPackage('mgrnotifications',$this->config['modelPath']);
         if ($this->modx->lexicon) {

@@ -30,7 +30,7 @@ mgrnotifications.panel.Home = function(config) {
         border: false
         ,baseCls: 'modx-formpanel'
         ,items: [{
-            html: '<h2>'+'mgrnotifications'+'</h2>'
+            html: '<h2>'+_('ntm.menu.title')+'</h2><p>'+_('ntm.menu.subtitle')+'</p>'
             ,border: false
             ,cls: 'modx-page-header'
         },{
@@ -45,25 +45,25 @@ mgrnotifications.panel.Home = function(config) {
                 return {activeTab:this.items.indexOf(this.getActiveTab())};
             }
             ,items: [{
-                title: _('snippets')
+                title: _('ntm.notifications')
                 ,defaults: { autoHeight: true }
                 ,items: [{
-                    html: '<p>'+'Demo only . . . grid will change, but no real action is taken'+'</p>'
+                    html: '<p>'+'Manage notifications'+'</p>'
                     ,border: false
                     ,bodyStyle: 'padding: 10px'
                 },{
-                    xtype: 'mgrnotifications-grid-snippet'
+                    xtype: 'mgrnotifications-grid-notification'
                     ,preventRender: true
                 }]
             },{
-                title: _('chunks')
+                title: _('ntm.customers')
                 ,defaults: { autoHeight: true }
                 ,items: [{
-                    html: '<p>'+'Demo only . . . grid will change, but no real action is taken'+'</p>'
+                    html: '<p>'+'Manage customer records'+'</p>'
                     ,border: false
                     ,bodyStyle: 'padding: 10px'
                 },{
-                    xtype: 'mgrnotifications-grid-chunk'
+                    xtype: 'mgrnotifications-grid-customer'
                     ,preventRender: true
                 }]
             }]

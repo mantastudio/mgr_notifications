@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin2 plugin for mgrnotifications extra
+ * Plugin1 plugin for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
  * Created on 28-09-2020
@@ -24,7 +24,7 @@
 /**
  * Description
  * -----------
- * Description for Plugin one
+ * [[+description]]
  *
  * Variables
  * ---------
@@ -34,3 +34,17 @@
  * @package mgrnotifications
  **/
 
+$modx->log(modX::LOG_LEVEL_ERROR, 'Notification Plug-In 2 triggered');
+$modx->regClientStartupHTMLBlock('
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+');
+$modx->regClientStartupHTMLBlock('
+<script>
+    let URL= "/assets/components/mgrnotifications/connector.php?action=mgr%2fnotification%2fretrieve";
+    window.onload = function(){
+        const tag = document.createElement("script");
+        tag.src = "/assets/components/mgrnotifications/js/notification.js";
+        document.getElementsByTagName("body")[0].appendChild(tag);
+    };
+</script>
+');

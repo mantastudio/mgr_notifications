@@ -6,3 +6,25 @@
  *
  * @package mgrnotifications
  */
+
+#mgrnotifications {
+    background:#af035c;
+    color:#ffffff;
+    text-align:center;
+    position:absolute;
+    width:100%;
+    z-index:65000;
+    line-height: 1.8em;
+    box-shadow: 0 1px 4px #111;
+    border-bottom: 1px solid #f7007f;
+}
+
+#mgrnotifications.error {
+    background: #ff0000;
+}
+#mgrnotifications.info {
+    background: #1e90ff;
+}
+#mgrnotifications.success {
+    background: #008000;
+}

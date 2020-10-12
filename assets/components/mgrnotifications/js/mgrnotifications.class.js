@@ -23,7 +23,7 @@
    $modx->lexicon->load('mgrnotifications:default');
    include 'mgrnotifications.class.php'
  */
-var mgrnotifications = function (config) {
+let mgrnotifications = function (config) {
     config = config || {};
     mgrnotifications.superclass.constructor.call(this, config);
 };
@@ -32,4 +32,4 @@ Ext.extend(mgrnotifications, Ext.Component, {
 });
 Ext.reg('mgrnotifications', mgrnotifications);
 
-var mgrnotifications = new mgrnotifications();
+mgrnotifications = new mgrnotifications();
