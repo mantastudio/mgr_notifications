@@ -34,13 +34,13 @@
  * @package mgrnotifications
  **/
 
-$modx->log(modX::LOG_LEVEL_ERROR, 'Notification Plug-In 2 triggered');
 $modx->regClientStartupHTMLBlock('
+    <link rel="stylesheet" type="text/css" href="/assets/components/mgrnotifications/css/mgrnotifications.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 ');
 $modx->regClientStartupHTMLBlock('
 <script>
-    let URL= "/assets/components/mgrnotifications/connector.php?action=mgr%2fnotification%2fretrieve";
+    let mgrnotifications_URL= "/assets/components/mgrnotifications/connector.php?action=mgr%2fnotification%2fretrieve";
     window.onload = function(){
         const tag = document.createElement("script");
         tag.src = "/assets/components/mgrnotifications/js/notification.js";
