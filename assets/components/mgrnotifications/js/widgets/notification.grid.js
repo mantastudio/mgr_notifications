@@ -252,10 +252,17 @@ Ext.extend(mgrnotifications.grid.Notifications, MODx.grid.Grid, {
     }
     , renderResourceList: function(v,md,rec,ri,ci,s,g) {
         if(v.length === 0) {
-            return '<span style="color:#8A8A8A;"><i>' + _('ntm.startpage.default') + '</i></span>';
+            return '<span style="color:#8A8A8A;"><i>'
+                + _('ntm.startpage.default')
+                + '</i></span>';
         }
         const r = s.getAt(ri).data;
-        return r.Name + ' (' + _('ntm.startpage.id') + ': ' + v + ')';
+        return r.Name
+            + ' ('
+            + _('ntm.startpage.id')
+            + ': '
+            + v
+            + ')';
     }
 
 });

@@ -40,7 +40,7 @@ if ($modx->lexicon) {
 }
 
 $headers = apache_request_headers();
-
+$contact = $modx->getOption("default_message_cointact", null, '');
 $customer = $modx->getObject('customers', array(
     'API_key' => $headers['Token'],
     'Status' => 1,
@@ -56,10 +56,10 @@ if ($customer){
 
     if ($notification){
         $data = array();
-        if ( time() < strtotime($notification->get('Expiry')) ){
+        if ( is_null($notification->get('Expiry')) || time() < strtotime($notification->get('Expiry')) ){
             $data[] = array(
                 'Title' => $notification->get('Title'),
-                'Message' => $notification->get('Message'),
+                'Message' => $notification->get('Message') . ' ' . $contact,
                 'Class' => $notification->get('Class'),
             );
             if ( is_null($notification->get('First_delivery')) ){

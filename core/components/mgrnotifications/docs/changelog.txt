@@ -1,5 +1,5 @@
-Changelog for mgrnotifications
+Changelog for mgr notifications manager
 
-mgrnotifications 1.0.0
+mgr notifications manager Rel.1
 ---------------------------------
 Initial Version

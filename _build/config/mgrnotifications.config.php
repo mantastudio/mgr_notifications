@@ -16,7 +16,7 @@ $components = array(
     'packageName' => 'mgrnotifications',  /* No spaces, no dashes */
     'packageNameLower' => $packageNameLower,
     'packageDescription' => 'mgrnotifications project for MyComponent extra',
-    'version' => '1.0.0',
+    'version' => '1.0.8',
     'release' => 'beta1',
     'author' => 'Sinisa Vrhovac',
     'email' => 'https://github.com/mantastudio/',
@@ -56,23 +56,50 @@ $components = array(
      * their namespace to the lowercase package name of your extra */
 
     'newSystemSettings' => array(
-        'mgrnotifications_system_setting1' => array( // key
-            'key' => 'mgrnotifications_system_setting1',
-            'name' => 'mgrnotifications Setting One',
-            'description' => 'Description for setting one',
+        'mgrnotifications_client_key' => array( // key
+            'key' => 'mgrnotifications_client_key',
+            'name' => 'Client Key',
+            'description' => 'Appy key used to connect to notification service',
             'namespace' => 'mgrnotifications',
             'xtype' => 'textfield',
-            'value' => 'value1',
-            'area' => 'area1',
+            'value' => '',
+            'area' => 'Connection',
         ),
-        'mgrnotifications_system_setting2' => array( // key
-            'key' => 'mgrnotifications_system_setting2',
-            'name' => 'mgrnotifications Setting Two',
-            'description' => 'Description for setting two',
+        'mgrnotifications_service_url' => array( // key
+            'key' => 'mgrnotifications_service_url',
+            'name' => 'Service URL',
+            'description' => 'The notfication service endpoint',
             'namespace' => 'mgrnotifications',
-            'xtype' => 'combo-boolean',
-            'value' => true,
-            'area' => 'area2',
+            'xtype' => 'textfield',
+            'value' => '',
+            'area' => 'Connection',
+        ),
+        'default_message_contact' => array( // key
+            'key' => 'default_message_contact',
+            'name' => 'Message Contact Detail',
+            'description' => 'A standard contact action',
+            'namespace' => 'mgrnotifications',
+            'xtype' => 'textfield',
+            'value' => '',
+            'area' => 'Message',
+        ),
+        'default_message_en' => array( // key
+            'key' => 'default_message_en',
+            'name' => 'Default Message English',
+            'description' => 'A sample default message to provide in English',
+            'namespace' => 'mgrnotifications',
+            'xtype' => 'textfield',
+            'value' => '',
+            'area' => 'Message',
+        ),
+        'default_message_nl' => array( // key
+            'key' => 'default_message_nl',
+            'name' => 'Default Message Dutch',
+            'description' => 'A sample default message to provide in Dutch',
+            'namespace' => 'mgrnotifications',
+            'xtype' => 'textfield',
+            'value' => '',
+            'area' => 'Message',
         ),
     ),
 
@@ -84,16 +111,7 @@ $components = array(
      *
      * Warning: Do *not* list regular MODX System Events here !!! */
 
-    'newSystemEvents' => array(
-        'OnMyEvent1' => array(
-            'name' => 'OnMyEvent1',
-        ),
-        'OnMyEvent2' => array(
-            'name' => 'OnMyEvent2',
-            'groupname' => 'mgrnotifications',
-            'service' => 1,
-        ),
-    ),
+    'newSystemEvents' => array(),
 
     /* ************************ NAMESPACE(S) ************************* */
     /* (optional) Typically, there's only one namespace which is set
@@ -113,13 +131,7 @@ $components = array(
     /* (optional) List any contexts other than the 'web' context here
     */
 
-    'contexts' => array(
-        'mgrnotifications' => array(
-            'key' => 'mgrnotifications',
-            'description' => 'mgrnotifications context',
-            'rank' => 2,
-        )
-    ),
+    'contexts' => array(),
 
     /* *********************** CONTEXT SETTINGS ************************ */
 
@@ -130,28 +142,7 @@ $components = array(
      * The context_key should be the name of an actual context.
      * */
 
-    'contextSettings' => array(
-        'mgrnotifications_context_setting1' => array(
-            'context_key' => 'mgrnotifications',
-            'key' => 'mgrnotifications_context_setting1',
-            'name' => 'mgrnotifications Setting One',
-            'description' => 'Description for setting one',
-            'namespace' => 'mgrnotifications',
-            'xtype' => 'textfield',
-            'value' => 'value1',
-            'area' => 'mgrnotifications',
-        ),
-        'mgrnotifications_context_setting2' => array(
-            'context_key' => 'mgrnotifications',
-            'key' => 'mgrnotifications_context_setting2',
-            'name' => 'mgrnotifications Setting Two',
-            'description' => 'Description for setting two',
-            'namespace' => 'mgrnotifications',
-            'xtype' => 'combo-boolean',
-            'value' => true,
-            'area' => 'mgrnotifications',
-        ),
-    ),
+    'contextSettings' => array(),
 
     /* ************************* CATEGORIES *************************** */
     /* (optional) List of categories. This is only necessary if you
@@ -159,16 +150,7 @@ $components = array(
      * or want to nest categories.
     */
 
-    'categories' => array(
-        'mgrnotifications' => array(
-            'category' => 'mgrnotifications',
-            'parent' => '',  /* top level category */
-        ),
-        'category2' => array(
-            'category' => 'Category2',
-            'parent' => 'mgrnotifications', /* nested under mgrnotifications */
-        )
-    ),
+    'categories' => array(),
 
     /* *************************** MENUS ****************************** */
 
@@ -179,27 +161,7 @@ $components = array(
      *
      * Every menu should have exactly one action */
 
-    'menus' => array(
-        'mgrnotifications' => array(
-            'text' => 'mgrnotifications',
-            'parent' => 'components',
-            'description' => 'ex_menu_desc',
-            'icon' => '',
-            'menuindex' => 0,
-            'params' => '',
-            'handler' => '',
-            'permissions' => '',
-
-            'action' => array(
-                'id' => '',
-                'namespace' => 'mgrnotifications',
-                'controller' => 'index',
-                'haslayout' => true,
-                'lang_topics' => 'mgrnotifications:default',
-                'assets' => '',
-            ),
-        ),
-    ),
+    'menus' => array(),
 
 
     /* ************************* ELEMENTS **************************** */
@@ -221,129 +183,30 @@ $components = array(
 
     'elements' => array(
 
-        'propertySets' => array( /* all three fields are required */
-            'PropertySet1' => array(
-                'name' => 'PropertySet1',
-                'description' => 'Description for PropertySet1',
-                'category' => 'mgrnotifications',
-            ),
-            'PropertySet2' => array(
-                'name' => 'PropertySet2',
-                'description' => 'Description for PropertySet2',
-                'category' => 'mgrnotifications',
-            ),
-        ),
+        'propertySets' => array(),
 
         'snippets' => array(
-            'Snippet1' => array(
+            'notification_module' => array( /* mgrnotifications with static and property set(s)  */
                 'category' => 'mgrnotifications',
-                'description' => 'Description for Snippet one',
-                'static' => true,
-            ),
-
-            'Snippet2' => array( /* mgrnotifications with static and property set(s)  */
-                'category' => 'Category2',
-                'description' => 'Description for Snippet two',
+                'description' => 'Notification provider module',
                 'static' => false,
-                'propertySets' => array(
-                    'PropertySet1',
-                    'PropertySet2'
-                ),
             ),
 
         ),
         'plugins' => array(
-            'Plugin1' => array( /* minimal mgrnotifications */
+            'notification_module' => array( /* mgrnotifications with static, events, and property sets */
                 'category' => 'mgrnotifications',
-            ),
-            'Plugin2' => array( /* mgrnotifications with static, events, and property sets */
-                'category' => 'mgrnotifications',
-                'description' => 'Description for Plugin one',
+                'description' => 'Notification plugin',
                 'static' => false,
-                'propertySets' => array( /* all property sets to be connected to element */
-                    'PropertySet1',
-                ),
                 'events' => array(
-                    /* minimal mgrnotifications - no fields */
-                    'OnUserFormSave' => array(),
                     /* mgrnotifications with fields set */
-                    'OnMyEvent1' => array(
-                        'priority' => '0', /* priority of the event -- 0 is highest priority */
-                        'group' => 'plugins', /* should generally be set to 'plugins' */
-                        'propertySet' => 'PropertySet1', /* property set to be used in this pluginEvent */
-                    ),
-                    'OnMyEvent2' => array(
-                        'priority' => '3',
-                        'group' => 'plugins',
-                        'propertySet' => '',
-                    ),
-                    'OnDocFormSave' => array(
-                        'priority' => '4',
-                        'group' => 'plugins',
-                        'propertySet' => '',
-                    ),
-
-
+                    'OnManagerPageBeforeRender' => array(),
                 ),
             ),
         ),
-        'chunks' => array(
-            'Chunk1' => array(
-                'category' => 'mgrnotifications',
-            ),
-            'Chunk2' => array(
-                'description' => 'Description for Chunk two',
-                'category' => 'mgrnotifications',
-                'static' => false,
-                'propertySets' => array(
-                    'PropertySet2',
-                ),
-            ),
-        ),
-        'templates' => array(
-            'Template1' => array(
-                'category' => 'mgrnotifications',
-            ),
-            'Template2' => array(
-                'category' => 'mgrnotifications',
-                'description' => 'Description for Template two',
-                'static' => false,
-                'propertySets' => array(
-                    'PropertySet2',
-                ),
-            ),
-        ),
-        'templateVars' => array(
-            'Tv1' => array(
-                'category' => 'mgrnotifications',
-                'description' => 'Description for TV one',
-                'caption' => 'TV One',
-                'default_text' => 'Tv1 Default Text',
-                'propertySets' => array(
-                    'PropertySet1',
-                    'PropertySet2',
-                ),
-                'templates' => array(
-                    'default' => 1,
-                    'Template1' => 4,
-                    'Template2' => 4,
-
-
-                ),
-            ),
-            'Tv2' => array( /* mgrnotifications with templates, default, and static specified */
-                'category' => 'mgrnotifications',
-                'description' => 'Description for TV two',
-                'caption' => 'TV Two',
-                'static' => false,
-                'default_text' => '@INHERIT',
-                'templates' => array(
-                    'default' => 3, /* second value is rank -- for ordering TVs when editing resource */
-                    'Template1' => 4,
-                    'Template2' => 1,
-                ),
-            ),
-        ),
+        'chunks' => array(),
+        'templates' => array(),
+        'templateVars' => array(),
     ),
     /* (optional) will make all element objects static - 'static' field above will be ignored */
     'allStatic' => false,
@@ -355,26 +218,7 @@ $components = array(
      * ************************************************************** */
     /* Array of Resource pagetitles for your Extra; All other fields optional.
        You can set any resource field here */
-    'resources' => array(
-        'Resource1' => array( /* minimal mgrnotifications */
-            'pagetitle' => 'Resource1',
-            'alias' => 'resource1',
-            'context_key' => 'mgrnotifications',
-        ),
-        'Resource2' => array( /* mgrnotifications with other fields */
-            'pagetitle' => 'Resource2',
-            'alias' => 'resource2',
-            'context_key' => 'mgrnotifications',
-            'parent' => 'Resource1',
-            'template' => 'Template2',
-            'richtext' => false,
-            'published' => true,
-            'tvValues' => array(
-                'Tv1' => 'SomeValue',
-                'Tv2' => 'SomeOtherValue',
-            ),
-        ),
-    ),
+    'resources' => array(),
 
 
     /* Array of languages for which you will have language files,
@@ -383,8 +227,9 @@ $components = array(
     'languages' => array(
         'en' => array(
             'default',
-            'properties',
-            'forms',
+        ),
+        'nl' => array(
+            'default',
         ),
     ),
     /* ********************************************* */
@@ -456,7 +301,6 @@ $components = array(
      * Suffix 'resolver.php' will be added automatically */
     'resolvers' => array(
         'default',
-        'addUsers'
     ),
 
     /* (optional) Validators can abort the install after checking
@@ -511,17 +355,12 @@ $components = array(
      * Set to array() if there are no classes. */
     'classes' => array(
         'AnotherClass' => 'mgrnotifications:anotherclass',
+        'customers' => 'mgrnotifications:customers',
+        'customers' => 'mgrnotifications:mgrnotifications',
+        'customers' => 'mgrnotifications:notifications',
 
-        /* (optional) - Specify methods for each class.
-           if 'function' is missing, 'public function ' will
-           be prepended. Curly braces will be added   */
-        'methods' => array(
-            /* Add one array here for each class with methods */
-            'AnotherClass' => array(
-                'public function method1()',
-                'method2($arg1, $arg2 = false)',
-            ),
-        ),
+        'customers' => 'mgrnotifications/mysql:customers',
+        'customers' => 'mgrnotifications/mysql:notifications',
     ),
 
     /* ************************************
@@ -554,13 +393,19 @@ $components = array(
        import, and export. */
 
     'processors' => array(
-        'mgr/snippet:getlist',
-        'mgr/snippet:changecategory',
-        'mgr/snippet:remove',
+        'mgr/customer:create',
+        'mgr/customer:getlist',
+        'mgr/customer:remove',
+        'mgr/customer:update',
+        'mgr/customer:updatefromgrid',
 
-        'mgr/chunk:getlist',
-        'mgr/chunk:changecategory',
-        'mgr/chunk:remove',
+        'mgr/notification:create',
+        'mgr/notification:get',
+        'mgr/notification:getlist',
+        'mgr/notification:remove',
+        'mgr/notification:retrieve',
+        'mgr/notification:update',
+        'mgr/notification:updatefromgrid',
     ),
 
     /* These will automatically go to core/components/yourcomponent/controllers[/directory]/filename
@@ -580,11 +425,15 @@ $components = array(
        Format: directory:filename */
 
     'cmpJsFiles' => array(
+        ':combos.js',
         ':mgrnotifications.class.js',
+        ':notification.js',
+
         'sections:home.js',
+
+        'widgets:customer.grid.js',
         'widgets:home.panel.js',
-        'widgets:snippet.grid.js',
-        'widgets:chunk.grid.js',
+        'widgets:notification.grid.js',
     ),
 
     /* These go to core/components/componentName/templates/
@@ -636,8 +485,7 @@ $components = array(
     'getResourcesById' => false,
 
     'exportResources' => array(
-        'Resource1',
-        'Resource2',
+        'notification',
     ),
     /* Array of resource parent IDs to get children of. */
     'parents' => array(),

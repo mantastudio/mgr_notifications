@@ -25,6 +25,9 @@ class mgrnotificationsNotificationUpdateProcessor extends modObjectUpdateProcess
      */
     public function beforeSave()
     {
+        if (empty($this->getProperty('Expiry'))){
+            $this->object->set('Expiry', null );
+        }
 
         return parent::beforeSave();
     }

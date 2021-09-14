@@ -3,7 +3,7 @@
  * menus transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
- * Created on 28-09-2020
+ * Created on 20-12-2020
  *
  * @package mgrnotifications
  * @subpackage build
@@ -24,12 +24,13 @@ if (! function_exists('stripPhpTags')) {
 
 $action = $modx->newObject('modAction');
 $action->fromArray( array (
-  'id' => 1,
   'namespace' => 'mgrnotifications',
   'controller' => 'index',
-  'haslayout' => true,
+  'haslayout' => 1,
   'lang_topics' => 'mgrnotifications:default',
   'assets' => '',
+  'help_url' => '',
+  'id' => 1,
 ), '', true, true);
 
 $menus[1] = $modx->newObject('modMenu');

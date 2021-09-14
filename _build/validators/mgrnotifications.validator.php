@@ -3,7 +3,7 @@
  * Validator for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
- * Created on 28-09-2020
+ * Created on 20-12-2020
  *
  * mgrnotifications is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software

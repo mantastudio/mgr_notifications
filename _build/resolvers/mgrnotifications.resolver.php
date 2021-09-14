@@ -28,15 +28,37 @@
 
 if ($object->xpdo) {
     $modx =& $object->xpdo;
+    $modx->setLogLevel(modX::LOG_LEVEL_INFO);
+    //$modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
+    $sources = array(
+        'model' => $modx->getOption('core_path').'components/mgrnotifications/model/',
+        'schema_file' => $modx->getOption('core_path').'components/mgrnotifications/model/schema/mgrnotifications.mysql.schema.xml'
+    );
+    $manager= $modx->getManager();
+    $generator= $manager->getGenerator();
+    if (!is_dir($sources['model'])) {
+        $modx->log(modX::LOG_LEVEL_ERROR,'Model directory not found!'); die();
+    }
+    if (!file_exists($sources['schema_file'])) {
+        $modx->log(modX::LOG_LEVEL_ERROR,'Schema file not found!'); die();
+    }
+    $generator->parseSchema($sources['schema_file'],$sources['model']);
+    $modx->addPackage('mgrnotifications', $sources['model']); // add package to make all models available
+
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            /* [[+code]] */
+
+            $manager->createObjectContainer('customers'); // created the database table
+            $manager->createObjectContainer('notifications'); // created the database table
             break;
 
         case xPDOTransport::ACTION_UNINSTALL:
+            $manager->removeObjectContainer('customers'); // created the database table
+            $manager->removeObjectContainer('notifications'); // created the database table
             break;
     }
+    $modx->log(modX::LOG_LEVEL_INFO, 'Done!');
 }
 
 return true;

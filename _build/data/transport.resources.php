@@ -3,7 +3,7 @@
  * resources transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
- * Created on 28-09-2020
+ * Created on 20-12-2020
  *
  * @package mgrnotifications
  * @subpackage build
@@ -28,37 +28,40 @@ $resources = array();
 $resources[1] = $modx->newObject('modResource');
 $resources[1]->fromArray(array (
   'id' => 1,
-  'pagetitle' => 'Resource1',
-  'alias' => 'resource1',
-  'context_key' => 'mgrnotifications',
-  'class_key' => 'modDocument',
-  'published' => '',
-  'richtext' => '1',
-  'hidemenu' => '0',
-  'cacheable' => '1',
-  'searchable' => '1',
-), '', true, true);
-$resources[1]->setContent(file_get_contents($sources['data'].'resources/resource1.content.html'));
-
-$resources[2] = $modx->newObject('modResource');
-$resources[2]->fromArray(array (
-  'id' => 2,
-  'pagetitle' => 'Resource2',
-  'alias' => 'resource2',
-  'context_key' => 'mgrnotifications',
-  'template' => 'Template2',
-  'richtext' => false,
+  'type' => 'document',
+  'contentType' => 'text/html',
+  'pagetitle' => 'notification',
+  'longtitle' => '',
+  'description' => '',
+  'alias' => 'notification',
+  'alias_visible' => true,
+  'link_attributes' => '',
   'published' => true,
-  'tvValues' => 
-  array (
-    'Tv1' => 'SomeValue',
-    'Tv2' => 'SomeOtherValue',
-  ),
+  'isfolder' => false,
+  'introtext' => '',
+  'richtext' => false,
+  'template' => 0,
+  'menuindex' => 2,
+  'searchable' => true,
+  'cacheable' => true,
+  'createdby' => 1,
+  'editedby' => 1,
+  'deleted' => false,
+  'deletedon' => 0,
+  'deletedby' => 0,
+  'menutitle' => '',
+  'donthit' => false,
+  'privateweb' => false,
+  'privatemgr' => false,
+  'content_dispo' => 0,
+  'hidemenu' => true,
   'class_key' => 'modDocument',
-  'hidemenu' => '0',
-  'cacheable' => '1',
-  'searchable' => '1',
+  'context_key' => 'web',
+  'content_type' => 1,
+  'hide_children_in_tree' => 0,
+  'show_in_tree' => 1,
+  'properties' => NULL,
 ), '', true, true);
-$resources[2]->setContent(file_get_contents($sources['data'].'resources/resource2.content.html'));
+$resources[1]->setContent(file_get_contents($sources['data'].'resources/notification.content.html'));
 
 return $resources;

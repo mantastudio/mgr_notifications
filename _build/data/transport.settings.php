@@ -3,7 +3,7 @@
  * systemSettings transport file for mgrnotifications extra
  *
  * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
- * Created on 28-09-2020
+ * Created on 20-12-2020
  *
  * @package mgrnotifications
  * @subpackage build
@@ -27,22 +27,32 @@ $systemSettings = array();
 
 $systemSettings[1] = $modx->newObject('modSystemSetting');
 $systemSettings[1]->fromArray(array (
-  'key' => 'mgrnotifications_system_setting1',
-  'name' => 'mgrnotifications Setting One',
-  'description' => 'Description for setting one',
-  'namespace' => 'mgrnotifications',
+  'key' => 'default_message_contact',
+  'value' => '',
   'xtype' => 'textfield',
-  'value' => 'value1',
-  'area' => 'area1',
+  'namespace' => 'mgrnotifications',
+  'area' => 'Message',
+  'name' => 'Message Contact Detail',
+  'description' => 'A standard contact action',
 ), '', true, true);
 $systemSettings[2] = $modx->newObject('modSystemSetting');
 $systemSettings[2]->fromArray(array (
-  'key' => 'mgrnotifications_system_setting2',
-  'name' => 'mgrnotifications Setting Two',
-  'description' => 'Description for setting two',
+  'key' => 'default_message_en',
+  'value' => '',
+  'xtype' => 'textfield',
   'namespace' => 'mgrnotifications',
-  'xtype' => 'combo-boolean',
-  'value' => true,
-  'area' => 'area2',
+  'area' => 'Message',
+  'name' => 'Default Message English',
+  'description' => 'A sample default message to provide in English',
+), '', true, true);
+$systemSettings[3] = $modx->newObject('modSystemSetting');
+$systemSettings[3]->fromArray(array (
+  'key' => 'default_message_nl',
+  'value' => '',
+  'xtype' => 'textfield',
+  'namespace' => 'mgrnotifications',
+  'area' => 'Message',
+  'name' => 'Default Message Dutch',
+  'description' => 'A sample default message to provide in Dutch',
 ), '', true, true);
 return $systemSettings;

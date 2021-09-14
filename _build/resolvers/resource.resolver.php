@@ -4,7 +4,7 @@
 * Sets template, parent, and (optionally) TV values
 *
 * Copyright 2020 by Sinisa Vrhovac https://github.com/mantastudio/
-* Created on 28-09-2020
+* Created on 20-12-2020
 *
  * mgrnotifications is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -50,18 +50,9 @@ if($object->xpdo) {
 
             $intersects = array (
                 0 =>  array (
-                  'pagetitle' => 'Resource1',
+                  'pagetitle' => 'notification',
                   'parent' => '0',
-                  'template' => 'default',
-                ),
-                1 =>  array (
-                  'pagetitle' => 'Resource2',
-                  'parent' => 'Resource1',
-                  'template' => 'Template2',
-                  'tvValues' =>  array (
-                    'Tv1' => 'SomeValue',
-                    'Tv2' => 'SomeOtherValue',
-                  ),
+                  'template' => 0,
                 ),
             );
 

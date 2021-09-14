@@ -19,10 +19,6 @@
 * @package mgrnotifications
 */
         
-/* These are for LexiconHelper:
-   $modx->lexicon->load('mgrnotifications:default');
-   include 'mgrnotifications.class.php'
- */
 let mgrnotifications = function (config) {
     config = config || {};
     mgrnotifications.superclass.constructor.call(this, config);

@@ -26,6 +26,20 @@ class mgrnotificationNotificationsCreateProcessor extends modObjectCreateProcess
      */
     public function beforeSave()
     {
+        $object = $this->modx->getObject(
+            $this->classKey,
+            array(
+                'Customer_id' => $this->getProperty('Customer_id'),
+                'Published' => 1,
+            )
+        );
+        if ($object){
+            return $this->modx->lexicon('ntm.already_published_notification');
+        }
+
+        if (empty($this->getProperty('Expiry'))){
+            $this->object->set('Expiry', null );
+        }
 
         return parent::beforeSave();
     }

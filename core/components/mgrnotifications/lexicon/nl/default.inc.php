@@ -76,3 +76,27 @@ $_lang['ntm.created.description']       = "Aanmaakdatum";
 $_lang['ntm.expiry.description']        = "Melding wordt niet weergegeven na deze datum";
 $_lang['ntm.name.description']          = "Klantnaam";
 $_lang['ntm.status.description']        = "Status van de klant. Actief of gearchiveerd.";
+$_lang['ntm.customer.description']                      = 'Klant moet melden';
+$_lang['ntm.title.description']                         = 'Titel van melding';
+$_lang['ntm.message.description']                       = 'Selecteer een voorgedefinieerd bericht of typ aangepast';
+$_lang['ntm.already_published_notification']            = 'Er is al een gepubliceerde melding voor deze klant!';
+$_lang['ex_menu_title']                                 = 'Meldingenbeheerder';
+$_lang['ex_menu_desc']                                  = 'Breng uw klanten op de hoogte van belangrijke zaken';
+
+/* Used in transport.settings.php */
+$_lang['setting_default_message_cointact']              = 'Contactgegevens bericht';
+$_lang['setting_default_message_cointact_desc']         = 'Een contactgegevens, telefoon of email als url';
+$_lang['setting_default_message_contact']               = 'Contactgegevens bericht';
+$_lang['setting_default_message_contact_desc']          = 'Een contactgegevens, telefoon of email als url';
+$_lang['setting_default_message_en']                    = 'Standaardbericht Engels';
+$_lang['setting_default_message_en_desc']               = 'Stel een standaardbericht in het Engels in';
+$_lang['setting_default_message_nl']                    = 'Standaardbericht Nederlands';
+$_lang['setting_default_message_nl_desc']               = 'Stel een standaardbericht in het Nederlands in';
+$_lang['setting_mgrnotifications_client_key']           = 'Cliëntsleutel';
+$_lang['setting_mgrnotifications_client_key_desc']      = 'Een client_key gebruikt om het verzoek te authenticeren';
+$_lang['setting_mgrnotifications_service_url']          = 'Service-URL';
+$_lang['setting_mgrnotifications_service_url_desc']     = 'Een url waar de meldingsservice wordt weergegeven';
+$_lang['setting_mgrnotifications_system_setting1']      = 'mgrnotifications Setting One';
+$_lang['setting_mgrnotifications_system_setting1_desc'] = 'Beschrijving voor het instellen van een';
+$_lang['setting_mgrnotifications_system_setting2']      = 'mgrnotifications Setting Two';
+$_lang['setting_mgrnotifications_system_setting2_desc'] = 'Beschrijving voor instelling twee';

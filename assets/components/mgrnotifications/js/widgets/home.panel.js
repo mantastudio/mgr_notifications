@@ -30,7 +30,11 @@ mgrnotifications.panel.Home = function(config) {
         border: false
         ,baseCls: 'modx-formpanel'
         ,items: [{
-            html: '<h2>'+_('ntm.menu.title')+'</h2><p>'+_('ntm.menu.subtitle')+'</p>'
+            html: '<h2>'
+                +_('ntm.menu.title')
+                +'</h2><p>'
+                +_('ntm.menu.subtitle')
+                +'</p>'
             ,border: false
             ,cls: 'modx-page-header'
         },{
